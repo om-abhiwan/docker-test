@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  web:
+    container_name: Docker-Use
+    build: .
+    restart: always
+    ports:
+      - "5021:5021"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/app
+      - /app/node_modules
