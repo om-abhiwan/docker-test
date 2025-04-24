@@ -4,6 +4,10 @@ FROM node:20
 # Workdir
 WORKDIR /app
 
+
+# installing nodemon first
+RUN npm install -g nodemon
+
 # copy 
 COPY package*.json ./
 
@@ -18,4 +22,4 @@ RUN npm install
 EXPOSE 5021
 
 
-CMD ["node", "index.js"]
+CMD ["nodemon", "index.js"]
